@@ -7,7 +7,8 @@ const app = express()
 router.get('/', async function(req, res) {
     try{
 
-        await door_lock_helper.getQrCode()
+        let result = await door_lock_helper.getQrCode()
+        res.json(result)
     }
     catch (e) {
         console.log(e)
